@@ -8,17 +8,18 @@
   justify-content: center;
   gap:20px;
   padding: 1.5em;
-  background: linear-gradient(180deg, rgba(199, 33, 62, 1) 0%, rgba(200, 18, 18, 1) 21%, rgba(255, 0, 0, 1) 88%, rgba(210, 16, 49, 1) 100%);
+  background: linear-gradient(180deg, rgba(139, 23, 0, 1) 0%, rgba(201, 5, 5, 0.9808517156862745) 50%, rgba(182, 3, 3, 1) 100%);
 }
 h1{
   font-weight: bolder;
 }
 .fontaweH1{
-  color:rgba(35, 44, 84, 0.75);
+  color:rgba(248, 244, 246,0.9);
   font-size: 2em;
-  border: 6px double rgba(139, 2, 2, 0.75);
+  border: 7px double rgba(108, 4, 4, 0.75);
   padding: 4px 1.5rem;
   border-radius: 10px;
+  background: radial-gradient(circle, rgb(228, 191, 253) 0%, rgba(77, 0, 164, 1) 93%);
 }
 /* search bar and add video  */
 .searchAndAddvideo{
@@ -70,7 +71,7 @@ h1{
   align-items: center;
 }
 .main{
- background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 247, 232);
 }
 hr{
   color:red;
@@ -107,6 +108,9 @@ hr{
 
 /* responsive style */
 @media only screen and (max-width: 980px) {
+  body{
+    background-size: contain;
+  }
   h1{
     font-size: 1.76em;
   }

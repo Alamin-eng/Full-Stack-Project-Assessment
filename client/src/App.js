@@ -19,14 +19,15 @@ function App() {
 
   // use effect added
   useEffect(() => {
-    fetch(`https://my-url-links.herokuapp.com/`)
+    fetch(`https://testing-urls.onrender.com/`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setVideos(data);
       })
-      .catch(error => {
-        console.log('Data not available')})
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   //Handle search
@@ -40,18 +41,28 @@ function App() {
     console.table(videos)
     console.log(newVidoeData)
     
-    setVideos([newVidoeData, ...videos]);
+    // setVideos([newVidoeData, ...videos]);
 
-    
       const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({title:newVidoeData.title , url:newVidoeData.url}),
       };
-      fetch("https://my-url-links.herokuapp.com/", requestOptions)
+      fetch("https://testing-urls.onrender.com/", requestOptions)
         .then((response) => response.json())
-        .then((data) => setVideos([...videos,newVidoeData]));
-    console.log(newVidoeData);
+        .then((data) => {
+          console.log(data);
+          let newUrl = {
+            id: data.id,
+            rating: 0,
+            title: newVidoeData.title,
+            url: newVidoeData.url,
+          };
+          newVidoeData.id = data.id;
+          setVideos([...videos, newUrl]);
+        });
+  
+      console.log(newVidoeData);
   }
   // handle add change fucntion
   function handleNewVideoChange(e) {
@@ -77,8 +88,9 @@ function App() {
       headers: { "Content-Type": "application/json" },
       
     };
-    fetch(`https://my-url-links.herokuapp.com/${id}`, requestOptions)
-      .then((response) => response.json())
+    fetch(`https://testing-urls.onrender.com//${id}`, requestOptions).then(
+      (response) => response.json()
+    );
   }
   return (
     <div className="App">
