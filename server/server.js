@@ -52,7 +52,7 @@ app.post("/", (req, res) => {
     res.send({ result: "failure", message: "Video could not be saved" });
   } else {
     const query =
-      "INSERT INTO videos (title,url,rating) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
+      "INSERT INTO urls (title,url,rating) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
 
     pool.query(query, [newVideo.title, newVideo.url, 0], (error, results) => {
       if (error) {
@@ -68,7 +68,7 @@ app.post("/", (req, res) => {
 app.get("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   pool
-    .query("SELECT * FROM videos WHERE id=$1", [id])
+    .query("SELECT * FROM urls WHERE id=$1", [id])
     .then((result) => res.json(result.rows))
     .catch((error) => {
       console.error(error);
@@ -84,7 +84,7 @@ app.get("/:id", (req, res) => {
 app.delete("/:id", (req, res) => {
   const id = parseInt(req.params.id); // notice it as the req.params.id is originally a string
   pool
-    .query("DELETE FROM videos WHERE id=$1", [id])
+    .query("DELETE FROM urls WHERE id=$1", [id])
     .then(() => res.send(`Video ${id} deleted!`))
     .catch((error) => {
       console.error(error);
