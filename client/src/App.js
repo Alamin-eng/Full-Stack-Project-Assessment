@@ -12,9 +12,9 @@ function App() {
   const [videos, setVideos] = useState([]); // changed to empty array[] from data
   const [newVidoeData, setNewVideoData] = useState({
     id: 0,
-    rating: 0,
     title: "",
     url: "",
+    rating: 0,
   });
 
   // use effect added
@@ -54,9 +54,9 @@ function App() {
           console.log(data);
           let newUrl = {
             id: data.id,
-            rating: 0,
             title: newVidoeData.title,
             url: newVidoeData.url,
+            rating: 0,
           };
           newVidoeData.id = data.id;
           setVideos([...videos, newUrl]);

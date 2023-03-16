@@ -8,7 +8,7 @@
   justify-content: center;
   gap:20px;
   padding: 1.5em;
-  background: linear-gradient(180deg, rgba(139, 23, 0, 1) 0%, rgba(201, 5, 5, 0.9808517156862745) 50%, rgba(182, 3, 3, 1) 100%);
+  background: linear-gradient(180deg, rgba(139, 23, 0, 1) 1%, rgba(201, 5, 5, 0.9808517156862745) 5%, rgba(182, 3, 3, 1) 80%);
 }
 h1{
   font-weight: bolder;
@@ -86,24 +86,33 @@ hr{
   justify-content: space-evenly;
   align-items: flex-end;
 }
+
+
+/* footer */
+.fontawe {
+  font-size: 1.15em;
+  padding: .6em;
+}
+
 .footer {
+
   height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: .5em;
-}
-
-.fontawe {
-  font-size: 1.6em;
-  padding: .6em;
+  gap: .6em;
+  font-size: 1.1em;
+  color: white;
+  background: linear-gradient(180deg, rgb(166, 1, 20) 0%, rgb(49, 45, 45) 100%);
 }
 
 .footer-icon {
+  padding-top: 1%;
   display: flex;
   justify-content: space-evenly;
-  gap: .5rem;
+  gap: 12px;
+  color: blue;
 }
 
 /* responsive style */
