@@ -8,6 +8,7 @@ import "./App.css";
 
 
 function App() {
+  const [status, setStatus] = useState("fetching");
   const [searchTerm, setSearchTerm] = useState("");
   const [videos, setVideos] = useState([]); // changed to empty array[] from data
   const [newVidoeData, setNewVideoData] = useState({
@@ -24,6 +25,7 @@ function App() {
       .then((data) => {
         console.log(data);
         setVideos(data);
+        setStatus("found data")
       })
       .catch((error) => {
         console.log(error);
@@ -94,21 +96,30 @@ function App() {
   }
   return (
     <div className="App">
-      <Header />
-      <SearchAndAddVideo
-        searchInput={searchTerm}
-        setSearchInput={handleSearch}
-        newVideoData={newVidoeData}
-        handleAddVideo={handleNewVideoSubmit}
-        handleNewVideoChange={handleNewVideoChange}
-      />
-      <Main
-        data={videos}
-        searchInput={searchTerm}
-        updateRating={updateRating}
-        deleteVideo={deleteVideo}
-      />
-      <Footer />
+      {status === "found data" ? (
+        <>
+          <Header />
+          <SearchAndAddVideo
+            searchInput={searchTerm}
+            setSearchInput={handleSearch}
+            newVideoData={newVidoeData}
+            handleAddVideo={handleNewVideoSubmit}
+            handleNewVideoChange={handleNewVideoChange}
+          />
+          <Main
+            data={videos}
+            searchInput={searchTerm}
+            updateRating={updateRating}
+            deleteVideo={deleteVideo}
+          />
+          {/* <Main data={videos} searchInput={searchTerm} updateRating={updateRating} deleteVideo={deleteVideo}/> */}
+          <Footer />
+        </>
+      ) : (
+        <div className="loading">
+        <h3>"Loading Videos Please Wait ... "</h3>
+        </div>
+      )}
     </div>
   );
 }

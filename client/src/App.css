@@ -13,6 +13,16 @@
 h1{
   font-weight: bolder;
 }
+.loading{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center
+}
+h3{
+  color: white;
+  display: flex;
+}
 .fontaweH1{
   color:rgba(248, 244, 246,0.9);
   font-size: 2em;
