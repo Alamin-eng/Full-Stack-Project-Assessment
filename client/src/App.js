@@ -112,7 +112,7 @@ function App() {
             updateRating={updateRating}
             deleteVideo={deleteVideo}
           />
-          {/* <Main data={videos} searchInput={searchTerm} updateRating={updateRating} deleteVideo={deleteVideo}/> */}
+          
           <Footer />
         </>
       ) : (

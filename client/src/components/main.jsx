@@ -19,17 +19,16 @@ function Main({data, searchInput, updateRating, deleteVideo}){
                        : <iframe className="embed-responsive-item p-2"  src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" allowfullscreen></iframe>)} 
                         <button type="button" class="btn btn-warning col-3" onClick={(event)=> deleteVideo(event, e.id)}>Delete</button>
                     </div>
+                    
                     <div>
                         <p className="h3 p-1">{e.title}</p> 
-                        <LikeButtons votes={e.rating} updateRating={updateRating} videoId={e.id}/> <hr></hr>
+                        <LikeButtons votes={e.vote} updateRating={updateRating} videoId={e.id}/> <hr></hr>
                     </div>
                     
                     </div>
                     
-                )
-                
+                )   
             })}
-            
        </main>
     );
 }
