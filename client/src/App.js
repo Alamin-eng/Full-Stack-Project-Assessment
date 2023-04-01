@@ -15,7 +15,7 @@ function App() {
     id: 0,
     title: "",
     url: "",
-    rating: 0,
+    vote: 0,
   });
 
   // use effect added
@@ -58,7 +58,7 @@ function App() {
             id: data.id,
             title: newVidoeData.title,
             url: newVidoeData.url,
-            rating: 0,
+            vote: 0,
           };
           newVidoeData.id = data.id;
           setVideos([...videos, newUrl]);
@@ -74,7 +74,7 @@ function App() {
   function updateRating(e, id, change) {
     e.preventDefault();
     const currentVideo = videos.find((video) => video.id === id);
-    currentVideo.rating += change;
+    currentVideo.vote += change;
     const updatedVideos = videos.map((video) =>
       video.id === id ? currentVideo : video
     );

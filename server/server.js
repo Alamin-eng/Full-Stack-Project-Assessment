@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
     });
 });
 
-// GET "/post"
+// Post method 
 app.post("/", (req, res) => {
   // Delete this line after you've confirmed your server is running
   const newVideo = req.body;
@@ -52,7 +52,7 @@ app.post("/", (req, res) => {
     res.send({ result: "failure", message: "Video could not be saved" });
   } else {
     const query =
-      "INSERT INTO urls (title,url,rating) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
+      "INSERT INTO urls (title,url,vote) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
 
     pool.query(query, [newVideo.title, newVideo.url, 0], (error, results) => {
       if (error) {
@@ -90,16 +90,7 @@ app.delete("/:id", (req, res) => {
       console.error(error);
       res.status(500).json(error);
     });
-  // const filterVideo = videos.filter((vid) => vid.id === id);
-  // if (filterVideo.length === 0) {
-  //   res.json({
-  //     result: "failure",
-  //     message: "Video could not be deleted",
-  //   });
-  // }
-  // const updateVidoes = videos.filter((vid) => vid.id !== id);
-  // videos = updateVidoes;
-  // res.json({});
+  
 });
 
 // listen to port
