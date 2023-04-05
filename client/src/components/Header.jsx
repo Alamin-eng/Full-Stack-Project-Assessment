@@ -12,6 +12,7 @@ function Header(){
                 />
             </div>
             <h1 className="text-white">Video Recommendation</h1>
+            <div className="h1Circle"></div>
         </header>
     )
 }

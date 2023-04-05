@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
   const [status, setStatus] = useState("fetching");
   const [searchTerm, setSearchTerm] = useState("");
-  const [videos, setVideos] = useState([]); // changed to empty array[] from data
+  const [videos, setVideos] = useState([]); 
   const [newVidoeData, setNewVideoData] = useState({
     id: 0,
     title: "",
@@ -117,7 +117,7 @@ function App() {
         </>
       ) : (
         <div className="loading">
-        <h3>"Loading Videos Please Wait ... "</h3>
+        <h4>"Loading Videos Please Wait"</h4>
         </div>
       )}
     </div>

@@ -11,7 +11,7 @@ function Main({data, searchInput, updateRating, deleteVideo}){
        <main className="main">
             {dataManipulation.map((e) =>{
                 const videoId = e.url.split('v=')[1]
-                console.log(videoId)
+                
                 return(
                     <div className="map-div p-2 border shadow">
                     <div className="iframeAndDeletebutton-div">

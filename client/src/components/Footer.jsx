@@ -52,7 +52,7 @@ function Footer(){
             />
           </a>
         </div>
-        <p style={{fontSize:'.75em'}}> CYF mini project <br></br> Made With Love &copy; Mohammad Alamin 2022</p>
+        <p style={{fontSize:'.75em'}}> Cyf Fullstack Project <br></br> Made With Love &copy; Mohammad Alamin 2022</p>
       </footer>
     );
 }
