@@ -14,7 +14,7 @@ const Search = ({ searchInput, setSearchInput,newVideoData, handleAddVideo, hand
         />
       </form>
       {/* add video form */}
-      <form class="form-horizontal p-4 bg-info">
+      <form class="form-horizontal p-4 bg-info rounded">
   <div class="form-group setLabels">
     <label  for="title">Title</label>
     <input type="text" class="form-control" name="title" placeholder="Add Title" value={newVideoData.title} onChange={handleNewVideoChange}/>
