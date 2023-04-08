@@ -8,6 +8,7 @@ import "./App.css";
 
 
 function App() {
+  const loadingVideo = require('./loading.gif');
   const [status, setStatus] = useState("fetching");
   const [searchTerm, setSearchTerm] = useState("");
   const [videos, setVideos] = useState([]); 
@@ -112,12 +113,13 @@ function App() {
             updateRating={updateRating}
             deleteVideo={deleteVideo}
           />
-          
+
           <Footer />
         </>
       ) : (
-        <div className="loading">
-        <h4>"Loading Videos Please Wait"</h4>
+        <div className="loadingImg">
+          
+          {/* <h4>"Loading Videos Please Wait"</h4> */}
         </div>
       )}
     </div>

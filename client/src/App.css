@@ -2,6 +2,16 @@
   text-align: center;
   font-family: 'Kdam Thmor Pro', sans-serif;
 }
+.loadingImg{
+  background-image: url('./loading.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  background-blend-mode:multiply;
+  opacity: .8;
+}
 .App-header{
   position:relative;
   z-index: 1;
@@ -188,5 +198,13 @@ hr{
     hr {
       width: 100%;
       margin-bottom: 0;
+    }
+    .loadingImg {
+      opacity: .75;
+      background-clip: content-box;
+      backface-visibility: hidden;
+      background-position: center;
+      background-size:initial;
+      background-size: 100% 80%;
     }
 }
