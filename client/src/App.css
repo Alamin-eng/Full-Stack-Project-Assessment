@@ -3,7 +3,7 @@
   font-family: 'Kdam Thmor Pro', sans-serif;
 }
 .loadingImg{
-  background-image: url('./loading.gif');
+  background-image: url('https://cdn.dribbble.com/users/1327327/screenshots/5038424/mg_video_1.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -170,6 +170,11 @@ hr{
 @media only screen and (max-width: 980px) {
   body{
     background-size: contain;
+  }
+  .loadingImg {
+    opacity: .75;
+    background-size:cover;
+    padding: 2%;
   }
   h1{
     font-size: 1.76em;

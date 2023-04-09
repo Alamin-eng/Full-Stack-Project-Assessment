@@ -116,7 +116,7 @@ function App() {
           <Footer />
         </>
       ) : (
-        <div className="loading">
+        <div className="loadingImg">
         <h4>"Loading Videos Please Wait"</h4>
         </div>
       )}
