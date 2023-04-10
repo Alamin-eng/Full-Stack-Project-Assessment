@@ -11,7 +11,7 @@ function Header(){
                 icon={faVideoCamera}
                 />
             </div>
-            <h1 className="text-white">Video Recommendation</h1>
+            <h1 className="text-white">Video Playlist</h1>
         </header>
     )
 }

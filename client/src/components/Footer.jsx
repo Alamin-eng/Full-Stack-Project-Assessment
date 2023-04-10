@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Footer(){
     return (
       <footer className="footer text-center">
-        <hr style={{ width: "100%", color: "white" }}></hr>
+        
         <div className="footer-icon">
           <a
             href="mailto:mohammedalaminruben@gmail.com?subject = Feedback&body = Message"

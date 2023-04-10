@@ -7,12 +7,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://i.pinimg.com/originals/6b/82/40/6b8240db2e40fd0242e11e4d07a48f78.jpg");
-    background-size: cover;
+  background-image: url("https://img.freepik.com/free-vector/3d-film-strip-with-glowing-light-background_1017-38832.jpg");
+    background-size: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color:rgb(183, 20, 20);
+    background-color:rgb(139, 7, 7);
     height: 100vh;
+    
     background-blend-mode: multiply;
 }
 /*

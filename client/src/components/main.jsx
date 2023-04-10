@@ -13,7 +13,7 @@ function Main({data, searchInput, updateRating, deleteVideo}){
                 const videoId = e.url.split('v=')[1]
                 
                 return(
-                    <div className="map-div p-2 border shadow">
+                    <div className="map-div p-2 shadow">
                     <div className="iframeAndDeletebutton-div">
                        {(e.url === 'blocked' ? 'Link is broken, Please watch another video' 
                        : <iframe className="embed-responsive-item p-2"  src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" allowfullscreen></iframe>)} 
@@ -21,7 +21,7 @@ function Main({data, searchInput, updateRating, deleteVideo}){
                     </div>
                     
                     <div>
-                        <p className="h3 p-1">{e.title}</p> 
+                        <p className="h3 text-light p-1">{e.title}</p> 
                         <LikeButtons votes={e.vote} updateRating={updateRating} videoId={e.id}/> <hr></hr>
                     </div>
                     
