@@ -5,12 +5,10 @@ import SearchAndAddVideo from "./components/SearchAndAddVideo";
 import Footer from "./components/Footer";
 import "./App.css";
 
-
-
 function App() {
   const [status, setStatus] = useState("fetching");
   const [searchTerm, setSearchTerm] = useState("");
-  const [videos, setVideos] = useState([]); 
+  const [videos, setVideos] = useState([]);
   const [newVidoeData, setNewVideoData] = useState({
     id: 0,
     title: "",
@@ -25,7 +23,7 @@ function App() {
       .then((data) => {
         console.log(data);
         setVideos(data);
-        setStatus("found data")
+        setStatus("found data");
       })
       .catch((error) => {
         console.log(error);
@@ -40,31 +38,34 @@ function App() {
   // add video handle function
   function handleNewVideoSubmit(e) {
     e.preventDefault();
-    console.table(videos)
-    console.log(newVidoeData)
-    
+    console.table(videos);
+    console.log(newVidoeData);
+
     // setVideos([newVidoeData, ...videos]);
 
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({title:newVidoeData.title , url:newVidoeData.url}),
-      };
-      fetch("https://testing-urls.onrender.com/", requestOptions)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          let newUrl = {
-            id: data.id,
-            title: newVidoeData.title,
-            url: newVidoeData.url,
-            vote: 0,
-          };
-          newVidoeData.id = data.id;
-          setVideos([...videos, newUrl]);
-        });
-  
-      console.log(newVidoeData);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: newVidoeData.title,
+        url: newVidoeData.url,
+      }),
+    };
+    fetch("https://testing-urls.onrender.com/", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        let newUrl = {
+          id: data.id,
+          title: newVidoeData.title,
+          url: newVidoeData.url,
+          vote: 0,
+        };
+        newVidoeData.id = data.id;
+        setVideos([...videos, newUrl]);
+      });
+
+    console.log(newVidoeData);
   }
   // handle add change fucntion
   function handleNewVideoChange(e) {
@@ -81,18 +82,30 @@ function App() {
     setVideos(updatedVideos);
   }
   // Delete button
-  function deleteVideo(e, id) {
+  async function deleteVideo(e, id) {
     e.preventDefault();
     const updatedVideos = videos.filter((video) => video.id !== id);
-      setVideos(updatedVideos)
-    const requestOptions = {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      
-    };
-    fetch(`https://testing-urls.onrender.com//${id}`, requestOptions).then(
-      (response) => response.json()
-    );
+    setVideos(updatedVideos);
+
+    try {
+      const response = await fetch(`https://testing-urls.onrender.com/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+    // const requestOptions = {
+    //   method: "DELETE",
+    //   headers: { "Content-Type": "application/json" },
+
+    // };
+    // fetch(`https://testing-urls.onrender.com//${id}`, requestOptions).then(
+    //   (response) => response.json()
+    // );
   }
   return (
     <div className="App">
@@ -112,12 +125,12 @@ function App() {
             updateRating={updateRating}
             deleteVideo={deleteVideo}
           />
-          
+
           <Footer />
         </>
       ) : (
         <div className="loadingImg">
-        <h4>"Loading Videos Please Wait"</h4>
+          <h4>"Loading Videos Please Wait"</h4>
         </div>
       )}
     </div>
@@ -125,4 +138,3 @@ function App() {
 }
 
 export default App;
-
