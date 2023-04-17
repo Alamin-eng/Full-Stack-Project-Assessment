@@ -63,7 +63,7 @@ function App() {
       });
     console.log(newVidoeData);
   }
-  
+
   // handle add change fucntion
   function handleNewVideoChange(e) {
     setNewVideoData({ ...newVidoeData, [e.target.name]: e.target.value });
@@ -83,15 +83,22 @@ function App() {
     e.preventDefault();
     const updatedVideos = videos.filter((video) => video.id !== id);
     setVideos(updatedVideos);
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this video?"
+    );
 
     try {
-      const response = await fetch(`https://testing-urls.onrender.com/${id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        
-      });
-      const data = await response.json();
-      console.log(data);
+      if (confirmDelete) {
+        const response = await fetch(
+          `https://testing-urls.onrender.com/${id}`,
+          {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        const data = await response.json();
+        console.log(data);
+      }
     } catch (err) {
       console.error(err);
     }

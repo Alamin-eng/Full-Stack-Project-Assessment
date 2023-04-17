@@ -124,6 +124,11 @@ h4{
   background-color: rgba(99, 2, 2, 0.85);
   background-blend-mode: multiply;
 }
+.form-horizontal{
+  background-color:rgba(3, 87, 176, 0.3);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
 
 hr{
   color:red;

@@ -13,7 +13,7 @@ body {
     background-repeat: no-repeat;
     background-color:rgb(139, 7, 7);
     height: 100vh;
-    
+    letter-spacing: 1px;
     background-blend-mode: multiply;
 }
 /*
