@@ -117,22 +117,14 @@ h4{
   grid-template-rows:auto;
   justify-content:center;
   align-items: center;
-border:.5px solid white;
-
+  border:.5px solid white;
   background-image: url("https://img.wallpapic.com/i4023-721-815/medium/realistic-photos-digital-art-purple-blue-wallpaper.jpg");
-    background-size: cover;
-  
-    background-repeat: no-repeat;
-    background-color: rgba(99, 2, 2, 0.85);
-  
-    background-blend-mode: multiply;
- 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(99, 2, 2, 0.85);
+  background-blend-mode: multiply;
 }
-.main{
-  /* background-color: rgb(252, 247, 232); */
-  
 
-}
 hr{
   color:red;
   width: 75%;

@@ -40,9 +40,6 @@ function App() {
     e.preventDefault();
     console.table(videos);
     console.log(newVidoeData);
-
-    // setVideos([newVidoeData, ...videos]);
-
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -64,9 +61,9 @@ function App() {
         newVidoeData.id = data.id;
         setVideos([...videos, newUrl]);
       });
-
     console.log(newVidoeData);
   }
+  
   // handle add change fucntion
   function handleNewVideoChange(e) {
     setNewVideoData({ ...newVidoeData, [e.target.name]: e.target.value });

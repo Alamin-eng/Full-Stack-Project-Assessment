@@ -9,7 +9,7 @@ app.use(express.json());
 
 const jsonData = require("../exampleresponse.json");
 
-app.use(cors()); // added cors
+app.use(cors()); 
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -18,17 +18,7 @@ const pool = new Pool({
   },
 });
 
-// const pool = new Pool({
-//   user: "postgres",
-//   host: "localhost",
-//   database: "cyf_hotels",
-//   password: "",
-//   port: 5432,
-// });
 
-// Store and retrieve your videos from here
-// If you want, you can copy "exampleresponse.json" into here to have some data to work with
-let videos = jsonData;
 
 // GET "/"
 app.get("/", (req, res) => {
@@ -69,7 +59,7 @@ app.get("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   pool
     .query("SELECT * FROM urls WHERE id=$1", [id])
-    .then((result) => res.json(result.rows))
+    .then((result) => res.json(result.rows[0]))
     .catch((error) => {
       console.error(error);
       res.status(500).json(error);
