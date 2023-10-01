@@ -5,7 +5,7 @@ function Main({data, searchInput, updateRating, deleteVideo}){
     const dataManipulation = data
     .filter((e) => e.title && e.title.toLowerCase().includes(searchInput.toLowerCase()))
     .sort((a,b) => {
-      return  a.vote > b.vote ? -1 : b.vote > a.vote ? 1 : 0
+      return  a.rating > b.rating ? -1 : b.rating > a.rating ? 1 : 0
     })
     return(
        <main className="main">
@@ -22,7 +22,7 @@ function Main({data, searchInput, updateRating, deleteVideo}){
                     
                     <div>
                         <p className="h3 text-light p-1">{e.title}</p> 
-                        <LikeButtons votes={e.vote} updateRating={updateRating} videoId={e.id}/> <hr></hr>
+                        <LikeButtons ratings={e.rating} updateRating={updateRating} videoId={e.id}/> <hr></hr>
                     </div>
                     
                     </div>

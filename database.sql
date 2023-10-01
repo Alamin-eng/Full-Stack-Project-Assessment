@@ -22,3 +22,5 @@ insert into videos
      update videos
     set rating=20
     where id= 7; 
+
+    

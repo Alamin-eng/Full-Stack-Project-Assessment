@@ -13,12 +13,13 @@ function App() {
     id: 0,
     title: "",
     url: "",
-    vote: 0,
+    rating: 0,
   });
 
   // use effect added
   useEffect(() => {
-    fetch(`https://testing-urls.onrender.com/`)
+    fetch(`http://localhost:3002/urls`)
+      // fetch(`https://testing-urls.onrender.com/`) --render.com database related
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -56,7 +57,7 @@ function App() {
           id: data.id,
           title: newVidoeData.title,
           url: newVidoeData.url,
-          vote: 0,
+          rating: 0,
         };
         newVidoeData.id = data.id;
         setVideos([...videos, newUrl]);
