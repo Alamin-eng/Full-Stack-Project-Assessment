@@ -49,7 +49,7 @@ function App() {
         url: newVidoeData.url,
       }),
     };
-    fetch("https://testing-urls.onrender.com/", requestOptions)
+    fetch("http://localhost:3002/urls", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -90,13 +90,10 @@ function App() {
 
     try {
       if (confirmDelete) {
-        const response = await fetch(
-          `https://testing-urls.onrender.com/${id}`,
-          {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+        const response = await fetch(`http://localhost:3002/urls${id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        });
         const data = await response.json();
         console.log(data);
       }
