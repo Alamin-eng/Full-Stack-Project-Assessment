@@ -18,7 +18,7 @@ function App() {
 
   // use effect added
   useEffect(() => {
-    fetch(`http://localhost:3002/urls`)
+    fetch(`https://testing-urls.onrender.com/`)
       // fetch(`https://testing-urls.onrender.com/`) --render.com database related
       .then((res) => res.json())
       .then((data) => {
@@ -49,7 +49,7 @@ function App() {
         url: newVidoeData.url,
       }),
     };
-    fetch("http://localhost:3002/urls", requestOptions)
+    fetch("https://testing-urls.onrender.com/", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -90,10 +90,13 @@ function App() {
 
     try {
       if (confirmDelete) {
-        const response = await fetch(`http://localhost:3002/urls${id}`, {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-        });
+        const response = await fetch(
+          `https://testing-urls.onrender.com/${id}`,
+          {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
         const data = await response.json();
         console.log(data);
       }
