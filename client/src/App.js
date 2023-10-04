@@ -16,10 +16,12 @@ function App() {
     rating: 0,
   });
 
+
   // use effect added
   useEffect(() => {
-    fetch(`https://testing-urls.onrender.com/`)
-      // fetch(`https://testing-urls.onrender.com/`) --render.com database related
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // fetch(`https://testing-urls.onrender.com/`)
+    fetch(`https://urlserveroct2023.onrender.com/`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +31,10 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
 
   //Handle search
   function handleSearch(e) {
@@ -49,7 +54,7 @@ function App() {
         url: newVidoeData.url,
       }),
     };
-    fetch("https://testing-urls.onrender.com/", requestOptions)
+    fetch("https://urlserveroct2023.onrender.com/", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -91,7 +96,7 @@ function App() {
     try {
       if (confirmDelete) {
         const response = await fetch(
-          `https://testing-urls.onrender.com/${id}`,
+          `https://urlserveroct2023.onrender.com/${id}`,
           {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },

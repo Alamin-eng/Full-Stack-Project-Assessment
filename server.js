@@ -103,21 +103,21 @@
 
 // env.config();
 
+//  const jsonData = require("./exampleresponse.json");
+
 // // const jsonData = require("../exampleresponse.json");
 
-// let conString = process.env.DB_URL;
+// let conString = "ElephantSql data url here"
 // let client = new pg.Client(conString);
 
 // const port = process.env.PORT || 3002;
 
 // app.get("/urls", async (req, res) => {
 //   try {
-//     if (env.error) {
-//       throw result.error("Env file in node app not connected!!");
-//     }
 //     client.connect();
 //     const result = await client.query("SELECT * FROM urls");
 //     res.json(result.rows);
+// // res.send(jsonData)
    
 //   } catch (error) {
 //     console.error("Error executing query:", error);
@@ -172,7 +172,7 @@
 //       console.error(error);
 //       res.status(500).json(error);
 //     });
-//    client.release();
+   
 // });
 
 // // listen to port
