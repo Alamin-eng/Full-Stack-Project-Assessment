@@ -3,13 +3,15 @@
 // // added cors because client server fetch were showing blocking messaging and suggested cors()
 // const cors = require("cors");
 // const { Pool } = require("pg");
+// const env = require("dotenv");
 
 // const port = process.env.PORT || 5001;
 // app.use(express.json());
 
-// const jsonData = require("../exampleresponse.json");
+// const jsonData = require("./exampleresponse.json");
 
 // app.use(cors()); 
+// env.config();
 
 // const pool = new Pool({
 //   connectionString: process.env.DATABASE_URL,
@@ -19,13 +21,12 @@
 // });
 
 
-
 // // GET "/"
 // app.get("/", (req, res) => {
-//   // Delete this line after you've confirmed your server is running
-//   // res.json(videos);
+//  //Delete this line after you've confirmed your server is running
+// //   res.json(fruits);
 //   pool
-//     .query("SELECT * FROM urls")
+//     .query("SELECT * FROM url")
 //     .then((result) => res.json(result.rows))
 //     .catch((error) => {
 //       console.error(error);
@@ -42,7 +43,7 @@
 //     res.send({ result: "failure", message: "Video could not be saved" });
 //   } else {
 //     const query =
-//       "INSERT INTO urls (title,url,vote) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
+//       "INSERT INTO url (title,url,rating) VALUES ($1, $2, $3) RETURNING id"; // notice how we returned id
 
 //     pool.query(query, [newVideo.title, newVideo.url, 0], (error, results) => {
 //       if (error) {
@@ -58,7 +59,7 @@
 // app.get("/:id", (req, res) => {
 //   const id = parseInt(req.params.id);
 //   pool
-//     .query("SELECT * FROM urls WHERE id=$1", [id])
+//     .query("SELECT * FROM url WHERE id=$1", [id])
 //     .then((result) => res.json(result.rows[0]))
 //     .catch((error) => {
 //       console.error(error);
@@ -74,7 +75,7 @@
 // app.delete("/:id", (req, res) => {
 //   const id = parseInt(req.params.id); // notice it as the req.params.id is originally a string
 //   pool
-//     .query("DELETE FROM urls WHERE id=$1", [id])
+//     .query("DELETE FROM url WHERE id=$1", [id])
 //     .then(() => res.send(`Video ${id} deleted!`))
 //     .catch((error) => {
 //       console.error(error);

@@ -16,12 +16,12 @@ function App() {
     rating: 0,
   });
 
+  // fetch(`https://urlserveroct2023.onrender.com/`) // - this api is for ElephantSql database, server running in render.com
 
   // use effect added
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // fetch(`https://testing-urls.onrender.com/`)
-    fetch(`https://urlserveroct2023.onrender.com/`)
+    fetch(`https://renderdburlserveroct2023.onrender.com/`) // - this api is for render.com database, server running in render.com
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -31,10 +31,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-
 
   //Handle search
   function handleSearch(e) {
@@ -54,7 +51,7 @@ function App() {
         url: newVidoeData.url,
       }),
     };
-    fetch("https://urlserveroct2023.onrender.com/", requestOptions)
+    fetch("https://renderdburlserveroct2023.onrender.com/", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -96,7 +93,7 @@ function App() {
     try {
       if (confirmDelete) {
         const response = await fetch(
-          `https://urlserveroct2023.onrender.com/${id}`,
+          `https://renderdburlserveroct2023.onrender.com/${id}`,
           {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
